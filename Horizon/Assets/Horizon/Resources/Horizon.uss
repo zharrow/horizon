@@ -1,0 +1,120 @@
+/* Repris du CSS du prototype. 1px USS = 1 point (le panneau est mis à l'échelle de l'écran). */
+.root { position: absolute; left: 0; top: 0; right: 0; bottom: 0; color: #f1ecff; font-size: 16px; }
+.fill { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+#scene { -unity-background-scale-mode: stretch-to-fill; background-color: #0b0922; }
+
+.muted { color: #9a93c2; }
+
+/* HUD */
+#hud { position: absolute; left: 0; right: 0; top: 0; padding: 14px 18px 0 18px; opacity: 0; transition-property: opacity; transition-duration: 0.3s; align-items: center; }
+#hud.on { opacity: 1; }
+.bar { width: 100%; max-width: 560px; height: 5px; border-radius: 2.5px; background-color: rgba(255, 255, 255, 0.08); overflow: hidden; }
+#bar { height: 100%; width: 100%; -unity-background-scale-mode: stretch-to-fill; }
+.hudrow { width: 100%; max-width: 560px; margin-top: 10px; flex-direction: row; justify-content: space-between; align-items: flex-end; }
+.mass { flex-direction: row; align-items: flex-end; }
+#hMass { font-size: 22px; padding: 0; margin: 0; }
+#hMassCur { font-size: 12px; margin-left: 6px; margin-bottom: 4px; padding: 0; }
+#hTime { color: #9a93c2; font-size: 13px; margin-bottom: 3px; }
+.hudright { flex-direction: row; align-items: center; }
+.pausebtn { width: 32px; height: 32px; margin: 0 0 0 12px; padding: 0; border-radius: 16px; border-width: 1px; border-color: rgba(167, 139, 250, 0.26); background-color: rgba(11, 9, 34, 0.35); flex-direction: row; justify-content: center; align-items: center; }
+.pausebtn:hover { background-color: rgba(255, 255, 255, 0.08); }
+.pausebtn:active { scale: 0.92 0.92; }
+.pausebar { width: 3px; height: 11px; margin: 0 2px; border-radius: 1px; background-color: #f1ecff; }
+
+/* Pause et réglages */
+#pTitle { font-size: 34px; letter-spacing: 6px; margin-bottom: 6px; -unity-text-align: middle-center; }
+#pSub { color: #9a93c2; font-size: 14px; margin-bottom: 28px; -unity-text-align: middle-center; }
+#quitBtn { margin-top: 12px; }
+.settings { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 18px; }
+.settings .btn { margin: 4px 5px; }
+.erarow { width: 100%; max-width: 560px; margin-top: 8px; flex-direction: row; align-items: center; font-size: 12px; color: #9a93c2; }
+#hEra { margin-right: 10px; padding: 0; }
+.ebar { flex-grow: 1; height: 3px; background-color: rgba(255, 255, 255, 0.07); border-radius: 1.5px; overflow: hidden; }
+#ebar { height: 100%; width: 0; background-color: #ffd166; }
+#hCombo { position: absolute; left: 0; right: 0; color: #ff9d4d; font-size: 14px; opacity: 0; -unity-text-align: middle-center; }
+
+/* Bandeau d'ère */
+#era { position: absolute; left: 0; right: 0; top: 30%; align-items: center; opacity: 0; }
+#era .small { color: #9a93c2; font-size: 13px; margin-bottom: 8px; -unity-text-align: middle-center; }
+#era .big { -unity-text-align: middle-center; text-shadow: 0 0 20px rgba(167, 139, 250, 0.5); }
+#era .em { color: #ffd166; font-size: 16px; margin-top: 12px; -unity-text-align: middle-center; }
+
+/* Écrans */
+.screen { position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 24px; background-color: rgba(11, 9, 34, 0.62); }
+.screen.on { display: flex; }
+/* Le CSS ne réduit jamais un bloc sous la taille de son contenu ; UI Toolkit si, d'où les chevauchements */
+.screen > *, .content > *, .pin > *, .stat > * { flex-shrink: 0; }
+.content { align-items: center; }
+
+/* Conseils */
+.coachrow { position: absolute; left: 0; right: 0; bottom: 28px; align-items: center; padding: 0 24px; }
+#coach { max-width: 340px; padding: 10px 16px; border-radius: 14px; border-width: 1px; border-color: rgba(167, 139, 250, 0.26); background-color: rgba(22, 18, 52, 0.85); color: #f1ecff; font-size: 14px; white-space: normal; -unity-text-align: middle-center; opacity: 0; }
+#menu { justify-content: flex-end; background-color: rgba(0, 0, 0, 0); -unity-background-scale-mode: stretch-to-fill; }
+.h1 { -unity-text-align: middle-center; margin: 0; padding: 0; }
+.tag { color: #9a93c2; max-width: 260px; margin-top: 20px; margin-bottom: 36px; font-size: 16px; white-space: normal; -unity-text-align: middle-center; }
+.hint { margin-top: 24px; color: #9a93c2; font-size: 13px; -unity-text-align: middle-center; white-space: normal; }
+
+.btn { border-width: 0; border-radius: 25px; padding: 14px 28px; margin: 0; background-color: #f1ecff; color: #0b0922; font-size: 16px; -unity-text-align: middle-center; transition-property: scale, background-color, color; transition-duration: 0.12s, 0.2s, 0.2s; }
+.btn:hover { background-color: #ffffff; }
+.btn:active { scale: 0.96 0.96; }
+.ghost { background-color: rgba(0, 0, 0, 0); color: #9a93c2; border-width: 1px; border-color: rgba(167, 139, 250, 0.26); padding: 8px 14px; font-size: 13px; border-radius: 17px; }
+.ghost:hover { background-color: rgba(255, 255, 255, 0.05); }
+
+/* Bilan */
+#sTitle { font-size: 20px; margin-bottom: 12px; color: #9a93c2; -unity-text-align: middle-center; }
+#sGain { color: #ffd166; -unity-text-align: middle-center; text-shadow: 0 0 17px rgba(255, 209, 102, 0.35); }
+#sCur { font-size: 14px; margin-top: 4px; -unity-text-align: middle-center; }
+#sChips { margin-top: 14px; }
+#sBest { color: #ff9d4d; font-size: 14px; min-height: 20px; margin-top: 6px; max-width: 300px; white-space: normal; -unity-text-align: middle-center; }
+.stats { flex-direction: row; margin-top: 22px; margin-bottom: 32px; }
+.stat { margin-left: 14px; margin-right: 14px; align-items: center; }
+.stat-v { font-size: 20px; margin-bottom: 2px; color: #f1ecff; -unity-text-align: middle-center; }
+.stat-l { font-size: 13px; color: #9a93c2; -unity-text-align: middle-center; }
+
+/* Pastilles de monnaie */
+.chips { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+.chip { flex-direction: row; align-items: center; margin: 3px 6px; }
+.chip-dot { width: 8px; height: 8px; border-radius: 4px; margin-right: 5px; }
+.chip-v { font-size: 14px; padding: 0; }
+.chip-n { font-size: 12px; color: #9a93c2; margin-left: 5px; padding: 0; margin-top: 2px; }
+
+/* Arbre */
+#tree { padding: 0; justify-content: flex-start; align-items: stretch; }
+.thead { flex-direction: row; justify-content: space-between; align-items: center; padding: 14px 18px 8px 18px; }
+.bank { justify-content: flex-start; flex-shrink: 1; }
+.tright { align-items: flex-end; }
+.cyc { flex-direction: row; align-items: center; margin-bottom: 6px; display: none; }
+.cyc .btn { padding: 6px 11px; border-radius: 15px; }
+#cycLbl { font-size: 13px; margin: 0 6px; }
+#treeView { flex-grow: 1; overflow: hidden; }
+#world { position: absolute; left: 50%; top: 50%; width: 0; height: 0; overflow: visible; }
+
+.node { position: absolute; border-width: 1.5px; border-color: rgba(167, 139, 250, 0.26); background-color: #171338; align-items: center; justify-content: center; }
+.node-g { -unity-text-align: middle-center; padding: 0; margin: 0; color: #f1ecff; }
+.node-lv { position: absolute; right: -8px; top: -6px; font-size: 9px; background-color: #171338; border-width: 1px; border-color: rgba(167, 139, 250, 0.26); border-radius: 9px; padding: 3px 6px; color: #9a93c2; }
+.node-nm { position: absolute; top: 100%; margin-top: 6px; font-size: 11px; color: #9a93c2; white-space: nowrap; -unity-text-align: upper-center; width: 160px; left: 50%; translate: -80px 0; }
+.node-sel { position: absolute; left: -8px; top: -8px; right: -8px; bottom: -8px; border-width: 2px; border-color: #f1ecff; display: none; }
+.node-halo { position: absolute; -unity-background-image-tint-color: #a78bfa; opacity: 0; }
+.node.own { border-color: rgba(167, 139, 250, 0.6); }
+.node.can { border-color: #a78bfa; }
+.node.can .node-lv { color: #a78bfa; border-color: #a78bfa; }
+.node.max { border-color: #ffd166; }
+.node.max .node-g { color: #ffd166; }
+.node.max .node-lv { color: #ffd166; }
+.node.sel .node-sel { display: flex; }
+.node.sel .node-nm { color: #f1ecff; }
+.node.tease { opacity: 0.3; }
+
+#panel { background-color: rgba(22, 18, 52, 0.94); border-top-width: 1px; border-color: rgba(167, 139, 250, 0.26); padding: 16px 18px; align-items: center; }
+.pin { width: 100%; max-width: 560px; }
+.phead { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+#pName { font-size: 16px; padding: 0; }
+#pLv { font-size: 13px; color: #9a93c2; padding: 0; }
+#pDesc { color: #9a93c2; margin-top: 6px; margin-bottom: 14px; font-size: 14px; min-height: 20px; white-space: normal; padding: 0; }
+.pact { flex-direction: row; }
+.pact .btn { flex-grow: 1; flex-basis: 0; padding: 14px 12px; }
+#buyBtn { background-color: #a78bfa; color: #0b0922; margin-right: 10px; }
+#buyBtn.no { background-color: rgba(255, 255, 255, 0.08); color: #9a93c2; }
+
+/* Textes flottants */
+.float { position: absolute; -unity-text-align: middle-center; white-space: nowrap; padding: 0; margin: 0; }
